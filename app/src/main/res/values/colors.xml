@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#cacaca</color>
+    <color name="main_gray">#cacaca</color>
+    <color name="little_gray">#f4f3f3</color>
+    <color name="greenForDoneChallenge">#b3cf85</color>
+    <color name="green">#97b961</color>
+    <color name="bronze">#b79d5f</color>
+    <color name="light_bronze">#cab771</color>
+    <color name="fiolet">#c27db1</color>
+    <color name="blue">#769bbf</color>
+    <color name="orange">#bf7f76</color>
+    <color name="yellow">#bfb676</color>
+    <color name="little_bronze">#a8c29c62</color>
+    <color name="little_bronze2">#fefffbef</color>
+    <color name="little_green">#2397b961</color>
+    <color name="little_red">#0fbf2326</color>
+    <color name="red">#c26969</color>
+    <color name="black">#5e5e5d</color>
+    <color name="really_black">#121211</color>
+    <color name="little_black">#868685</color>
+</resources>

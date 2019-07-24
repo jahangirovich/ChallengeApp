@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ainurbayanova.kolesa">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".mvp.view.activities.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Challenge"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyNoActionBarShadowTheme" />
+        <activity android:name=".authentications.Login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".authentications.Registration" />
+        <activity android:name=".authentications.Forgot_password" />
+        <activity
+            android:name=".mvp.view.activities.add_challengeActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".mvp.view.activities.add_membersActivity"
+            android:parentActivityName=".mvp.view.activities.add_challengeActivity" />
+
+        <service android:name=".services.ChallengeService" />
+        <service android:name=".services.CheckChallengeService" />
+        <service android:name=".services.ExampleService" />
+
+        <activity android:name=".mvp.view.activities.detailActivity" />
+        <activity
+            android:name=".mvp.view.activities.Profile"
+            android:theme="@style/ThemeForDone" />
+
+        <service android:name=".services.BackgroundCountDownTimer" />
+
+        <activity
+            android:name=".mvp.view.activities.add_goalsActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".MainActivity" />
+
+        <service android:name=".firebase.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".mvp.view.activities.edit_profileActivity" />
+
+        <provider
+            android:name=".mvp.view.activities.GenericFileProvider"
+            android:authorities="${applicationId}.my.package.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".mvp.view.activities.ImageDetailActivity"
+            android:theme="@style/AppThemeForImage" />
+        <activity
+            android:name=".mvp.view.activities.aboutUsActivity"
+            android:theme="@style/AppThemeForAboutUs" />
+        <activity
+            android:name=".mvp.view.activities.calendarActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".authentications.phonepageActivity"
+            android:theme="@style/AppThemeForSplashScreen">
+        </activity>
+        <!-- <activity -->
+        <!-- android:name=".authentications.phonepageActivity" -->
+        <!-- android:label="@string/title_activity_phonepage" -->
+        <!-- android:theme="@style/AppTheme"></activity> -->
+        <activity android:name=".authentications.activationsActivity"
+            android:theme="@style/AppThemeForSplashScreen">
+
+        </activity>
+    </application>
+
+</manifest>

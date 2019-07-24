@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:clickable="true"
+    android:foreground="?android:selectableItemBackground">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <RelativeLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/image"
+                android:background="@drawable/red_circle_for_layout">
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/qbold"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:id="@+id/points"
+                android:layout_centerInParent="true"
+                android:text="-10"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ralewaylight"
+            android:textSize="14dp"
+            android:id="@+id/nameOfChallenge"
+            android:layout_gravity="center_vertical"
+            android:text="Motive all humans "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/qbold"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:gravity="right"
+            android:id="@+id/time"
+            android:layout_gravity="center_vertical"
+            android:text="15:40"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/little_gray"
+        android:padding="1dp"></RelativeLayout>
+</LinearLayout>

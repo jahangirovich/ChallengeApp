@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/background"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:foreground="?android:selectableItemBackground"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/qbold"
+            android:textSize="12dp"
+            android:id="@+id/idNumber"
+            android:layout_gravity="center_vertical"
+            android:text="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/userLayout"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/profileImage"
+                android:src="@drawable/man"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:text="Zhakhangir"
+
+                android:fontFamily="@font/quick"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:id="@+id/rate"
+            android:layout_marginRight="10dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:text="+96dp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/qbold"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/point"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:background="@color/little_gray"></RelativeLayout>
+</LinearLayout>

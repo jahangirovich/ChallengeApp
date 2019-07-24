@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activities.calendarActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Stories"
+            app:titleTextColor="@color/black">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBar"
+        android:id="@+id/materialCalendarView"
+        >
+
+    </CalendarView>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:layout_below="@id/materialCalendarView"
+        android:id="@+id/progressBar"/>
+    <RelativeLayout
+        android:id="@+id/all"
+        android:layout_below="@id/materialCalendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noLayout"
+            android:visibility="gone"
+            android:background="@drawable/border_for_layout"
+            >
+            <TextView
+                android:text="There is no anything challenged"
+                android:textColor="@color/black"
+                android:fontFamily="@font/quick"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_for_layout"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/showResult"
+            android:layout_margin="10dp"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="12/1000"
+                    android:id="@+id/amount"
+                    android:layout_weight="1"
+                    android:textSize="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/quick"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right|center_vertical"
+                    android:layout_height="match_parent"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:gravity="left"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/qbold"
+                        android:text="13%"
+                        android:id="@+id/percentage"
+                        android:textColor="@color/little_black"
+                        android:textSize="13dp" />
+
+                    <ProgressBar
+                        android:id="@+id/circularProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/progress"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="30"
+                        android:progressDrawable="@drawable/circle_progress" />
+                </RelativeLayout>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/design_of_done_challenges"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerView"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

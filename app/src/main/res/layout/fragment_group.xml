@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/little_gray"
+    android:orientation="vertical"
+    tools:context=".mvp.view.fragments.Challenges">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/border_for_layout"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/qbold"
+                android:text="0%"
+                android:id="@+id/percentage"
+                android:textColor="@color/little_black"
+                android:textSize="18dp" />
+
+            <ProgressBar
+                android:id="@+id/circularProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/progress"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress2" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quick"
+            android:gravity="center_horizontal"
+            android:text="The percentage of \n challenges done "
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quick"
+            android:gravity="center_horizontal"
+            android:padding="3dp"
+            android:text="0/1000"
+            android:textSize="11dp"
+            android:id="@+id/limit"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:id="@+id/showCalendar"
+            android:foreground="?android:selectableItemBackground"
+            android:paddingTop="5dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="10dp"
+            android:background="@color/little_gray"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_height="wrap_content"
+                android:textColor="@color/little_black"
+                android:textSize="14dp"
+                android:text="Show in Calendar"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:src="@drawable/ic_date_range_black_24dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/border_for_layout"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_flash_on_black_24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/little_black"
+                android:layout_weight="1"
+                android:fontFamily="@font/ralewaybold"
+                android:layout_height="wrap_content"
+                android:text="Challenge"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:layout_gravity="center_horizontal"
+            android:text="1/100"
+            android:fontFamily="@font/quick"
+            android:id="@+id/showStatistic"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loaderLayout"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:theme="@style/AppTheme.WhiteAccent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOfLoading"
+                android:text="Loading.."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thereIsNoLayout"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/flash_for_no"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/quick"
+                android:layout_height="wrap_content"
+                android:text="There is no challenges"/>
+        </LinearLayout>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:numColumns="2"
+            android:padding="10dp"
+            android:id="@+id/gridView"
+            tools:listitem="@layout/design_of_grid"
+            android:layout_height="wrap_content"></GridView>
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:id="@+id/more"
+                android:paddingBottom="5dp"
+                android:background="@color/green">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="More"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/next"
+                    android:layout_gravity="center_vertical|center_horizontal"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</LinearLayout>
+
